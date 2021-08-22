@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "github.com/ghost-sniper/xhare/internal/api/client";
+
+service Login{
+  // Get User login
+  rpc Login (LoginRequest) returns(LoginResponse){}
+}
+// The request message containing the user's login information
+message LoginRequest{
+  string nickname = 1;
+  string password = 2;
+}
+// The response message containing the user's login result
+message LoginResponse{
+  int32 code = 1;
+  string msg = 2;
+}
